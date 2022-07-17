@@ -29,13 +29,13 @@ function isArgumentative(question: string) {
 }
 
 function isCompound(question: string) {
-  let pos = question.indexOf('?');
+  const pos = question.indexOf('?');
   if (pos === -1) {
     return false;
   }
-  let str = question.substring(0, pos) + question.substring(pos+1, question.length);
-  console.log(str)
-  if (str.indexOf("?") === -1) {
+  const str = question.substring(0, pos) + question.substring(pos + 1, question.length);
+  console.log(str);
+  if (str.indexOf('?') === -1) {
     return false;
   } else {
     return true;
@@ -52,18 +52,18 @@ function isHearsay(testimony: string) {
 function isLeading(question: string) {
   if (question.startsWith('why did you') || question.startsWith('do you agree') ||
     question.endsWith('right?') || question.endsWith('correct?')) {
-      return true;
-  } 
+    return true;
+  }
   return false;
 }
 
 function isNonResponsive(testimony: string, question: string) {
   const regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
-  const q_result = question.replace(regex, '');
-  const t_result = testimony.replace(regex, '');
-  let q_arr = q_result.split(" ");
-  for (const word of q_arr) {
-    if (testimony.includes(word)) {
+  const qResult = question.replace(regex, '');
+  const tResult = testimony.replace(regex, '');
+  const qArr = qResult.split(' ');
+  for (const word of qArr) {
+    if (tResult.includes(word)) {
       return false;
     }
   }
@@ -71,9 +71,9 @@ function isNonResponsive(testimony: string, question: string) {
 }
 
 function isRelevance(testimony: string, question: string) {
-  let t_length = testimony.length;
-  let q_length = question.length;
-  if (t_length >= 2 * q_length) {
+  const tLength = testimony.length;
+  const qLength = question.length;
+  if (tLength >= 2 * qLength) {
     return true;
   }
   return false;
@@ -137,5 +137,4 @@ export function getObjections(
   return objections;
 }
 
-
-//getObjections('', 'No you!', ExaminationType.DIRECT);
+// getObjections('', 'No you!', ExaminationType.DIRECT);

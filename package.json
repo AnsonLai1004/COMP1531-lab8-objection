@@ -7,7 +7,7 @@
     "test": "jest --coverage src",
     "tsc": "tsc --noEmit",
     "ts-node": "ts-node",
-    "lint": "eslint src/**.ts"  
+    "lint": "eslint src/**.ts --fix"  
   },
   "keywords": [],
   "author": "",

@@ -139,7 +139,13 @@ describe('NonResponsive cases', () => {
     },
     {
       question: 'You are totally lying!',
-      testimony: 'No you!',
+      testimony: 'No lying',
+      type: ExaminationType.DIRECT,
+      objections: new Set([]),
+    },
+    {
+      question: 'You are totally lying!',
+      testimony: 'No lying,',
       type: ExaminationType.DIRECT,
       objections: new Set([]),
     },
