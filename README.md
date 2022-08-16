@@ -59,8 +59,6 @@ Now, you can do this by pretending to be a machine and manually stepping through
 
 1. That's it. You're good to go :).
 
-### Introduction
-
 ### Interface: Functions
 
 <table>
